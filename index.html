@@ -1,0 +1,41 @@
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="estilofachero.css">
+      <title>Pasaje de unidades</title>
+    </head>
+    <body>
+<div class="TITULO">
+      <legend>Pasaje de unidades</legend>
+      <br></br>
+</div>
+
+      <div class="fieldset">
+        <fieldset>
+            <label for="">Valor 1:</label>
+            <input type="text" id="txtN1">
+
+              <select id="unidades" onchange="select()">
+                <option value="1">KGF/CM2</option>
+                <option value="2">mH2o</option>
+                <option value="3">Bar</option>
+              </select>
+
+
+            <label for="">A</label>
+
+
+            <select id="unidades2" onchange="select()">
+              <option value="4">KGF/CM2</option>
+              <option value="5">mH2o</option>
+              <option value="6">Bar</option>
+            </select>
+            <br><br>
+            <input type="button" onclick="COM();" value="Cacular">
+        </fieldset>
+      </div>
+    </body>
+  <script src="calculo.js"></script>
+</html>
