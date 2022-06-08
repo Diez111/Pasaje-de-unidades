@@ -61,3 +61,16 @@ function COM() {
 
 
     }
+
+
+
+
+
+    function COM2() {
+
+      var ht = document.getElementById('txtHT').value;
+      var ht = document.getElementById('txtHC').value;
+      var ht = document.getElementById('txtHB').value;
+      var ht = document.getElementById('txtHA').value;
+
+  }

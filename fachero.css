@@ -1,0 +1,68 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Fondo*/
+body{
+  background: url(img/fachero.jpg);
+  background-position: center center;			/*horizontalmente */
+  background-repeat: no-repeat;		/* Para que la imagen de fondo no se repita */
+  background-attachment: fixed; /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+  background-size: cover;		/* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+  background-color: #FFF;	/* Se muestra un color de fondo mientras se está cargando la imagen	de fondo o si hay problemas para cargarla */
+}
+/*Fondo*/
+
+.fieldset {
+  font-size:14px;
+  padding:5px;
+  width: 60%;
+  height: 500px;
+  line-height:1.8;
+  margin: 0 auto;
+text-align:center;
+ }
+
+legend{
+font-family: comic sans;
+color: white;
+font-size: 40px;
+text-align: center;
+
+ }
+
+label{
+color: white;
+  }
+
+
+/*Imegen*/
+
+
+
+
+/*BOTON*/
+
+%test {
+  position: absolute;
+	content: '';
+	transition: all .5s;
+}
+
+.button {
+	display: inline-block;
+	padding: 20px 40px;
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	vertical-align: middle;
+	font-family: 'Rubik One', sans-serif;
+	text-decoration: none;
+	font-size: 4vw;
+	transition: all .5s;
+	background-color: #3498db;
+	}
