@@ -69,8 +69,59 @@ function COM() {
     function COM2() {
 
       var ht = document.getElementById('txtHT').value;
-      var ht = document.getElementById('txtHC').value;
-      var ht = document.getElementById('txtHB').value;
-      var ht = document.getElementById('txtHA').value;
+      var hc = document.getElementById('txtHC').value;
+      var hb = document.getElementById('txtHB').value;
+      var ha = document.getElementById('txtHA').value;
+
+
+      var incendio = parseInt(ht) * 10
+
+/*condiciones de presion*/
+
+/*Reportar error*/
+
+if (ha > hc && ha > hb) {
+  alert("Se debe seguir el esquema Ha no puede ser mayor a Hc y Hb")
+}
+else if (ha > hc && ha < hb) {
+  alert("Se debe seguir el esquema Ha no puede ser mayor a Hc")
+}
+else if (ha < hc && ha > hb) {
+  alert("Se debe seguir el esquema Ha no puede ser mayor a Hb")
+}
+
+
+      else if (ht < hc && ht < hb && ht < ha) {
+        alert("La presion del agua no es suficiente entre ningunos de los puntos")
+      }
+      else if (ht > hc && ht < hb && ht < ha) {
+        alert("La presion del agua es suficiente entre los puntos Ht y Hc")
+      }
+      else if (ht < hc && ht > hb && ht < ha) {
+        alert("La presion del agua no es suficiente entre los puntos Ht y Hb")
+      }
+      else if (ht < hc && ht < hb && ht > ha) {
+        alert("La presion del agua es suficiente entre los puntos Ht y Ha")
+      }
+
+
+
+      else if (ht > hc && ht > hb && ht <   ha) {
+        alert("La presion del agua es suficiente entre los puntos Ht, Hc y Hb " )
+      }
+      else if (ht > hc && ht > hb && ht > ha) {
+        alert("La presion del agua es suficiente entre todos los puntos")
+      }
+
+
+
+
+
+
+
+
+
+
+
 
   }

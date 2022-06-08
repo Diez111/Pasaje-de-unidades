@@ -3,19 +3,24 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
       <link rel="stylesheet" href="fachero.css">
       <title>Pasaje de unidades</title>
     </head>
     <body>
-<div class="TITULO">
-      <legend>Pasaje de unidades</legend>
-      <br></br>
-</div>
+
+      <legend class="titulo">Pasaje de unidades</legend>
+
 
       <div class="fieldset">
         <fieldset>
-            <label for="">Valor 1:</label>
-            <input type="text" id="txtN1">
+            <label class="letra" for="">Valor 1:</label>
+            <input class="estilo" type="text" id="txtN1">
+
 
               <select id="unidades" onchange="select()">
                 <option value="1">KGF/CM2</option>
@@ -32,53 +37,46 @@
               <option value="5">mH2o</option>
               <option value="6">Bar</option>
             </select>
-  <input type="button"  onclick="COM();" value="Calcular">
+
+
+
+  <button onclick="COM();" value="Calcular"> Calcular </button>
 
         </fieldset>
 
 
 
 
-<div class="TITULO2">
-      <legend>Calculos del grafico</legend>
-      <br></br>
-</div>
+<div class="titulo2">
+      <legend class="titulo2">Calculos del grafico</legend>
+
 
 
 
 <div class="fieldset">
 
-      <label for="">hT:</label>
-      <input type="text" id="txtHT">
-
-
+      <label  id="unidades2" for="">hT:</label>
+      <input class="estilo" type="text" id="txtHT">
 
       <label for="">hC:</label>
-      <input type="text" id="txtHC">
-
-
+      <input class="estilo" type="text" id="txtHC">
 
         <br></br>
 
-      <label for="">hB:</label>
-      <input type="text" id="txtHB">
+      <label  for="">hB:</label>
+      <input  class="estilo"type="text" id="txtHB">
+
+      <label  for="">hA:</label>
+      <input  class="estilo" type="text" id="txtHA">
 
 
+    <a href="https://github.com/Diez111/Pasaje-de-unidades"><img src="img/grafico.png" class="img"> </a>
 
-      <label for="">hA:</label>
-      <input type="text" id="txtHA">
+<br></<br>
 
-
-
-      <center>
-      <img src="img/grafico.png" width="500" height="300">
-      </center>
-
+      <button onclick="COM2();" value="Calcular"> Calcular </button>
 
 </div>
-
-
-
 
 
     </body>
