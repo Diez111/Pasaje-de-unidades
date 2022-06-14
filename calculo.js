@@ -50,6 +50,7 @@ function COM() {
 }
 
 /*CALCULOS*/
+var errores = 0;
 function calculo(){
 
     var ax = document.getElementById('txtHA').value;
@@ -63,17 +64,29 @@ function calculo(){
     var ht = parseFloat(tx);
 
     /*APB*/
+    //si hay algun espacio vacio
     if(ax == '' || bx == '' || cx == '' || tx == ''){
+        errores++;
         alert("Complete todos los espacios");
     }
-    if(ht < hc){
-      alert("hT es menor a HC el sistema de incendio no funciona");
+    else{
+      errores = 0;
     }
-
-    apb1(ha,hb,hc,ht); //COMPLETAR
+    //Condicion especial: si (ht - hc) es menor a 4mca
+    if(errores == 0 && (ht - hc) < 4){
+      errores++;
+      alert("El sistema no va a funcionar, va a necesitar una bomba");
+    }
+    else{
+      errores = 0;
+    }
+    //errores de calculo
+    if(errores == 0){
+      apb(ha,hb,hc,ht);
+    }
     /*APB*/
 
-
+    if(errores == 0){
     //MCA
     var a = ht - ha;
     var b = ht - hb;
@@ -91,21 +104,57 @@ function calculo(){
     men += linea;
     men += "A = "; men += a2; men += "kg/cm2  B = "; men += b2; men += "kg/cm2  C = "; men += c2; men += "kg/cm2";
     alert(men);
-
+    errores = 0;
+    }
 }
 
-function apb1(ha,hb,hc,ht){
-  if (ha > hc && ha > hb) {
-    alert("Se debe seguir el esquema, Ha no puede ser mayor a Hc y Hb")
+function apb(ha,hb,hc,ht){
+  //si ht es mayor a hc
+  if(ht < hc){
+    errores++;
+    alert("hT es menor a hC, el sistema no va a funcionar");
+  }
+  //si ha...
+  else if (ha > hc && ha > hb) {
+    errores++;
+    alert("Se debe seguir el esquema, hA no puede ser mayor a hC")
   }
   else if (ha > hc && ha < hb) {
-    alert("Se debe seguir el esquema, Ha no puede ser mayor a Hc")
+    errores++;
+    alert("Se debe seguir el esquema, hA no puede ser mayor a hC y menor a hB")
   }
   else if (ha < hc && ha > hb) {
-    alert("Se debe seguir el esquema, Ha no puede ser mayor a Hb")
+    errores++;
+    alert("Se debe seguir el esquema, hA no puede ser mayor a hB")
   }
+  //si hb...
   else if (hb > ha && hb > hc) {
-    alert("Se debe seguir el esquema, Hb no puede ser mayor a Hc")
+    errores++;
+    alert("Se debe seguir el esquema, hB no puede ser mayor a hC")
   }
-
+  else if (hb < ha && hb > hc) {
+    errores++;
+    alert("Se debe seguir el esquema, hB no puede ser mayor a hC y menor a hA")
+  }
+  else if (hb < ha && hb < hc) {
+    errores++;
+    alert("Se debe seguir el esquema, hB no puede ser menor a hA")
+  }
+  //si hc...
+  else if (hc < hb && hc > ha) {
+    errores++;
+    alert("Se debe seguir el esquema, hC no puede ser menor a hB")
+  }
+  else if (hc < ha && hc < hb) {
+    errores++;
+    alert("Se debe seguir el esquema, hC no puede ser menor a hA")
+  }
+  else if (hc < ha && hc > hb) {
+    errores++;
+    alert("Se debe seguir el esquema, hC no puede ser mayor a hA y menor a hB")
+  }
+  //si no pasa nada
+  else{
+    errores = 0;
+  }
 }
